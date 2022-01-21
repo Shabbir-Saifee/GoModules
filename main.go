@@ -2,6 +2,6 @@ package calculator
 
 import "fmt"
 
-func main() {
+func Message() {
     fmt.Println("Successfully imported calculator package")
 }
