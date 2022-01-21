@@ -1,7 +1,7 @@
-package main
+package calculator
 
 import "fmt"
 
 func main() {
-    fmt.Println("Successfully imported modules!")
+    fmt.Println("Successfully imported calculator package")
 }
