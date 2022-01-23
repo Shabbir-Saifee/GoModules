@@ -1,3 +1,3 @@
-module github/Shabbir-Saifee/GoModules
+module github.com/Shabbir-Saifee/GoModules
 
 go 1.17
