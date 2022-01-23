@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+         <meta charset="UTF-8">
+
+         <!-- The welcome struct (shown in the main.go code) is received within the HTML and we just need to use the . operator and retrieve the information we want -->
+         <title>Welcome {{.Name}}</title>
+         <style>
+         
+                  body  
+                  {
+                        min-height:100%;
+                        background-image: url("/static/stylesheets/background.jpeg"), linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.3));
+                        background-blend-mode: overlay;
+                        background-size:cover
+                  }
+                  
+                  .welcome {
+                        font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
+                        font-size: 3rem;
+                        color: aliceblue;
+                  }
+                  
+                  .center {
+                        height: 100vh;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                  }​
+         </style>
+   </head>
+   <body>
+      <div class="welcome center">Welcome {{.Name}}, it is {{.Time}}</div>
+   </body>
+</html>
