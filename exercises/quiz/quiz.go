@@ -7,9 +7,10 @@ import (
 	"strconv"
 	"encoding/csv"
 	"strings"
+	//"path/filepath"
 )
 
-func init(){
+func Init(){
 	val,i := 1,0
 	for(val == 1){
 		fmt.Println("Press 1 to continue the quiz to 2 stop")
@@ -22,7 +23,7 @@ func init(){
 			os.Exit(2)
 		}
 		if val == 2 {
-			continue
+			break
 		}
 		is := strconv.Itoa(i + 1)
 		var records [][] string= parseQuestions()
@@ -30,7 +31,7 @@ func init(){
 		fmt.Println("Question " +is + ": " + res[0])
 		var ansinput string
 		fmt.Scanln(&ansinput)
-		if ansinput == res[1] {
+		if ansinput == records[i][1] {
 			fmt.Println("Correct Answer")
 			continue
 		} else {
@@ -44,8 +45,10 @@ func init(){
 }
 
 func parseQuestions() [][]string{
-	filePath := "quiz.csv"
-	f, err := os.Open(filePath)
+
+	// fileName := "../quiz/quiz.csv"
+	// path, _ := filepath.Abs(fileName)
+	f, err := os.Open("D:\\github\\Shabbir-Saifee\\GoModules\\exercises\\quiz\\quiz.csv")
     if err != nil {
         fmt.Println(err)
     }

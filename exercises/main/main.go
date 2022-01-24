@@ -1,9 +1,9 @@
 package main
 
 import( 
-		"github.com/Shabbir-Saifee/GoModules/quiz"
+		"github.com/Shabbir-Saifee/GoModules/exercises/quiz"
 )
 
 func main(){
-	quiz.init()
+	quiz.Init()
 }
