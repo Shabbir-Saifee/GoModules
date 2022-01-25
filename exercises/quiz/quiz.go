@@ -2,19 +2,16 @@ package quiz
 
 import (
 	"fmt"
-	//"bufio"
 	"os"
 	"strconv"
 	"encoding/csv"
-	"strings"
-	//"path/filepath"
+	// "path/filepath"
 )
 
 func Init(){
 	val,i := 1,0
 	for(val == 1){
 		fmt.Println("Press 1 to continue the quiz to 2 stop")
-		//bufio.NewScanner(os.Stdin)
 		var input string  
 		fmt.Scanln(&input)
 		val,err := strconv.Atoi(input)
@@ -27,28 +24,30 @@ func Init(){
 		}
 		is := strconv.Itoa(i + 1)
 		var records [][] string= parseQuestions()
-		res := strings.Split(records[i][0], ",")
-		fmt.Println("Question " +is + ": " + res[0])
+		fmt.Println("Question " +is + ": " + records[i][0])
 		var ansinput string
 		fmt.Scanln(&ansinput)
 		if ansinput == records[i][1] {
 			fmt.Println("Correct Answer")
+			if i == (len(records) - 1) {
+				break
+			} 
+			i++
 			continue
 		} else {
 			fmt.Println("InCorrect Answer")
 		}
-		i++
 	}
 
-	fmt.Println("Thanks for participating")
+	fmt.Println("Finished! Thanks for participating")
 	
 }
 
 func parseQuestions() [][]string{
 
-	// fileName := "../quiz/quiz.csv"
-	// path, _ := filepath.Abs(fileName)
-	f, err := os.Open("D:\\github\\Shabbir-Saifee\\GoModules\\exercises\\quiz\\quiz.csv")
+	 fileName := "quiz.csv"
+	//  path, _ := filepath.Abs(fileName)
+	f, err := os.Open(fileName)
     if err != nil {
         fmt.Println(err)
     }
